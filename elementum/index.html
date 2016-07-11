@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="angularApp">
+    <head>
+        
+        <!-- load angular via CDN -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+
+    <body style="background-color:#e7eaed">
+
+        <div id="divMasterDetailWrapper" ng-controller='MasterDetailCtrl' class="container" style="width: 100%; height: 100% overflow: hidden;">
+            <div id="divMasterView"  style="width: 300px; height:100%; float: left;" ng-controller="moviesController">
+
+                <h1 style="color:#1a9dba"> Browse Movies </h1>
+                <hr>
+                <div class="col-md-6" ng-repeat="movie in movies">
+                    <a href="#details/{{movie.id}}">
+                    <img ng-src="https://image.tmdb.org/t/p/w500{{movie.backdrop_path}}?api_key=cf852df10c90128fb734af573f4f1a0d" width="75" height="75" class="img-circle"/>
+                    <br>
+                    <div>{{movie.original_title}}</div>
+                    <br>
+                    </a>
+                </div>
+            </div>
+
+            <div id="divDetailsView" class="container" style="width: 700px;" ng-controller="movieDetailsController">
+  
+                <!-- angular templating -->
+                    <!-- this is where content will be injected -->
+                <div ng-view></div>
+            
+            </div>
+        </div>
+    </body>
+
+</html>
