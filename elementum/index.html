@@ -21,7 +21,7 @@
         <div id="divMasterDetailWrapper" ng-controller='MasterDetailCtrl' class="divMasterDetail">
             <div id="divMasterView" class="divMaster" ng-controller="moviesController">
 
-                <h1 class="h1"> Browse Movies </h1>
+                <h1 class="h1 masterDetail"> Browse Movies </h1>
                 <hr>
                 <div class="col-md-6" ng-repeat="movie in movies" ng-click="movieSelected(movie.id)">
                     <img id="image{{movie.id}}" ng-src="https://image.tmdb.org/t/p/w500{{movie.backdrop_path}}?api_key=cf852df10c90128fb734af573f4f1a0d" class="img-circle backdropImage"/>
