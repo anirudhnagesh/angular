@@ -27,7 +27,7 @@
       <img id="profile_pic" ng-src="https://image.tmdb.org/t/p/w500{{profile_pic}}?api_key=cf852df10c90128fb734af573f4f1a0d" class="profilePic"/>
     </div>
   	<div ng-repeat="person in cast" class="castPerson">
-				<img ng-src="https://image.tmdb.org/t/p/w500{{person.profile_path}}?api_key=cf852df10c90128fb734af573f4f1a0d" width="75" height="75" class="img-circle"  ng-click="loadProfiePic(person.profile_path);" style="border:5px solid #1a9dba;"/>
+				<img id="cast_pic"ng-src="https://image.tmdb.org/t/p/w500{{person.profile_path}}?api_key=cf852df10c90128fb734af573f4f1a0d" width="75" height="75" class="img-circle"  ng-click="loadProfiePic(person.profile_path,$event);" style=""/>
         <div class="personDetailDiv">
 				  <h2 class="h2">{{person.name}}</h2>
 			    {{person.character}}

@@ -124,8 +124,9 @@ angularApp.controller('movieDetailsController', ['$scope','$routeParams','MovieS
         
     })
 
-    $scope.loadProfiePic = function(image) {
+    $scope.loadProfiePic = function(image,$event) {
         $scope.profile_pic = image
+        $event.target.style = "border:5px solid #1a9dba;"
     }
 }]);
 
