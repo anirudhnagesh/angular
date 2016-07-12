@@ -63,14 +63,10 @@ angularApp.controller('MasterDetailCtrl', ['$scope', function ($scope) {
 angularApp.controller('moviesController', ['$scope','$routeParams','$http', 'MovieService','$location', function ($scope,$routeParams,$http, MovieService,$location) {
 
 	$scope.movies = []
-	$scope.movieBackgroundImages = []
 
     function getMovies() {
     	MovieService.getMovies().then(function(data) {
     		$scope.movies = data.data.parts
-    		_.each($scope.movies, function(movie) {
-               $scope.movieBackgroundImages.push(movie.backdrop_path)
-        	})
     	})
     }
 
