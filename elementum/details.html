@@ -1,44 +1,39 @@
-<div>
-  <h1 style="color:#1a9dba"> Movie Details </h1>
+<div ng-controller="movieDetailsController">
+  <h1 class="h1"> {{movie_title}} </h1>
 
   <div class="container" class="row" >
     <hr>
     <div class="col-md-3" id="backdropImage">
-	  	<img ng-src="https://image.tmdb.org/t/p/w500/cpmbkwSxZnKO69V82A9a34tvk2E.jpg?api_key=cf852df10c90128fb734af573f4f1a0d" width="174" height="262"/>
+	  	<img ng-src="https://image.tmdb.org/t/p/w500{{backdrop_path}}?api_key=cf852df10c90128fb734af573f4f1a0d" class="backdropDetail"/>
   	</div>
   	<div class="col-md-4 text-left" id="movieOverview">
-  		<h2>WHO MADE IT?</h2>
-  		<body>Director: </body>{{director}}
-  		<h2>Writers: </h2>{{writers}}
-  		<h2>Stars :</h2>
+  		<h2 class="h2">WHO MADE IT?</h2>
+  		<h2 class="h2">Director: </h2>{{director}}
+  		<h2 class="h2">Writers: </h2>{{writers}}
+  		<h2 class="h2">Stars :</h2>{{stars}}
   		<br>
   		<br>
   		<br>
-  		<h2>WHATS'S IT ABOUT?</h2>
-  		{{movie_about}}
+  		<h2 class="h2">WHATS'S IT ABOUT?</h2>
+  		<div class="body">{{movie_about}}</div>
   	</div>
-  	
   </div>
 
   <h1 style="color:#1a9dba"> Movie Credits </h1>
   <hr>
 
-  <div class="container" class="row" >
-  	<div class="col-md-12" ng-repeat="person in cast">
-  		<div class="row">
-  			<div>
-  				<img ng-src="https://image.tmdb.org/t/p/w500{{person.profile_path}}?api_key=cf852df10c90128fb734af573f4f1a0d" width="75" height="75" class="img-circle"/>
-  				{{person.name}}
-				{{person.character}}
-  			</div>
-			
-  		</div>
-
-
+  <div class="container" style="width:100%">
+    <div class="credits">
+      <img id="profile_pic" ng-src="https://image.tmdb.org/t/p/w500{{profile_pic}}?api_key=cf852df10c90128fb734af573f4f1a0d" class="profilePic"/>
+    </div>
+  	<div ng-repeat="person in cast" class="castPerson">
+				<img ng-src="https://image.tmdb.org/t/p/w500{{person.profile_path}}?api_key=cf852df10c90128fb734af573f4f1a0d" width="75" height="75" class="img-circle"  ng-click="loadProfiePic(person.profile_path);" style="border:5px solid #1a9dba;"/>
+        <div class="personDetailDiv">
+				  <h2 class="h2">{{person.name}}</h2>
+			    {{person.character}}
+        </div>
   	</div>
-
   </div>
-
 
 
 </div>
