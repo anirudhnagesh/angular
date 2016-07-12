@@ -28,7 +28,7 @@ angularApp.service("MovieService", [
             // can store all of these inside constants file and use it from there.
             var base = 'http://api.themoviedb.org/3';
             var service = '/collection/528';
-            var apiKey = 'cf852df10c90128fb734af573f4f1a0d';
+            var apiKey = 'YOUR_API_KEY_HERE';
             var callback = 'JSON_CALLBACK';
             var url = base + service + '?api_key=' + apiKey + '&callback=' + callback;
             var imageBaseUrl =  "https://image.tmdb.org/t/p/w500/"
